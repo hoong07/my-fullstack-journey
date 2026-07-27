@@ -1,0 +1,76 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+
+input[type="text"] {
+    margin-left: 10px;
+    text-align: left;
+    height: 30px;
+}
+
+form .add {
+    margin-left: 20px;
+    width: 70px;
+    height: 30px;
+    background-color: rgb(74, 166, 202);
+    border: 0;
+    color: #f5f5f5;
+}
+
+form .add:hover {
+    background-color: #5bd6ce;
+}
+
+.title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 40px;
+    text-align: right;
+    line-height: 40px;
+    background-color: rgb(207, 176, 129);
+    color: rgb(131, 227, 150);
+    font-size: 18px;
+}
+
+.title span {
+    color: rgb(233, 124, 142);
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table thead {
+    background-color: rgb(207, 176, 129);
+    font-size: 26px;
+}
+
+table thead th,
+table tbody td{
+    height: 40px;
+    line-height: 40px;
+    padding-right: 100px;
+}
+
+table tbody td {
+    border: 1.5px solid #dedada;
+}
+
+table tbody td a {
+    margin-left: 20px;
+    display: block;
+    text-decoration: none;
+    width: 80px;
+    height: 30px;
+    background-color: pink;
+    line-height: 30px;
+    color: rgb(75, 212, 157);
+}
+
+table tbody td a:hover {
+    background-color: rgb(246, 200, 228);
+}
