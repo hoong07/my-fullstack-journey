@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./样式.css">
+</head>
+<body>
+    <h3>新用户注册</h3>
+    <form>
+        <div class="xtx-form">
+            <input type="text" name = "username" placeholder="设置用户名称">
+            <span class="msg"></span>
+        </div>
+        <div class="xtx-form">
+            <input type="text" name = "phone" placeholder="请输入手机号">
+            <span class="msg"></span>
+        </div>
+        <div class="xtx-form xtx-form-code">
+            <input type="text" name = "code" placeholder="短信验证码">
+            <span class="msg"></span>
+            <a class="code" href="javascript:">发送验证码</a>
+        </div>
+        <div class="xtx-form">
+            <input type="password" name = "password" placeholder="设置6至20位字母、数字和符号组合密码">
+            <span class="msg"></span>
+        </div>
+        <div class="xtx-form">
+            <input type="password" name = "confirm" placeholder="请再次输入上面的密码">
+            <span class="msg"></span>
+        </div>
+        <button>注册</button>
+    </form>
+
+
+    <script src="./交互.js"></script>
+</body>
+</html>
