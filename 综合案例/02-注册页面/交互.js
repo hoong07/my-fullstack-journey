@@ -91,3 +91,31 @@ function verifyCfm() {
     return true
 }
 
+// 7、同意模块：
+const queren = document.querySelector(".icon-queren")
+queren.addEventListener('click',function(){
+    this.classList.toggle('icon-queren2')
+})
+
+//8、提交模块
+const form = document.querySelector('form')
+form.addEventListener('submit',function(e){
+    if(!queren.classList.contains('icon-queren2')){
+        alert("请勾选同意协议")
+        e.preventDefault()
+    }
+    //依次判断上面的input任何一个没通过，阻止
+    // if(!verifyName()||!verifyPhone()||!verifyCode()||!verifyPwd()||verifyCmf())
+    //     e.preventDefault()
+    // 逻辑或会短路效应，前面阻止，后面都不会继续验证
+    if(!verifyName())
+        e.preventDefault()
+    if(!verifyPhone())
+        e.preventDefault()
+    if(!verifyCode())
+        e.preventDefault()
+    if(!verifyPwd())
+        e.preventDefault()
+    if(!verifyCfm())
+        e.preventDefault()
+})

@@ -1,0 +1,23 @@
+{
+  "id": "5217459",
+  "name": "注册页面验证",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "4765721",
+      "name": "check-circle",
+      "font_class": "check-circle",
+      "unicode": "e77d",
+      "unicode_decimal": 59261
+    },
+    {
+      "icon_id": "12865681",
+      "name": "radio button select",
+      "font_class": "radiobuttonselect",
+      "unicode": "e6ed",
+      "unicode_decimal": 59117
+    }
+  ]
+}

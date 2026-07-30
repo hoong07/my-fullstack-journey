@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 5217459 */
+  src: url('iconfont.woff2?t=1785376255847') format('woff2'),
+       url('iconfont.woff?t=1785376255847') format('woff'),
+       url('iconfont.ttf?t=1785376255847') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-check-circle:before {
+  content: "\e77d";
+}
+
+.icon-radiobuttonselect:before {
+  content: "\e6ed";
+}
+

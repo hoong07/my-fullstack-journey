@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     color: #e5e5e5;
+    font-style: normal;
 }
 
 h3 {
@@ -53,4 +54,16 @@ button {
     font-size: 12px;
     height: 12px;
     line-height: 12px;
+}
+
+.xtx-form i:nth-child(2) {
+    color: black;
+}
+
+.xtx-form i:last-child {
+    color: aqua;
+}
+
+.icon-queren2 {
+    color: aquamarine;
 }
