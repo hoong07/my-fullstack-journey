@@ -51,9 +51,10 @@ graph TD
 
 - [x] 学习方法论+习惯养成
 - [x] Git、终端、vscode、github使用学习
-- [ ] 前端基础(HTML,CSS,JavaScript)
-- [ ] 深入js，ts，以及浏览器渲染
+- [x] 前端基础(HTML,CSS,JavaScript基础语法)
+- [ ] 深入js，js进阶语法，ajax交互
 - [ ] 完成第一个tip：做出自己的响应式个人博客
+- [ ] ts，以及浏览器渲染引擎
 - [ ] 前端：react框架
 - [ ] 后端：node,ts + 框架
 - [ ] ai 基础学习：prompt，rag，从零写GPT
