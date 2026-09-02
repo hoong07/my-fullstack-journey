@@ -1,3 +1,5 @@
+// 不支持查询参数：
+
 function myAxios(config) {
     //返回promise对象
     return new Promise((resolve,reject) => {
