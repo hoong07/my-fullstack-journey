@@ -45,11 +45,44 @@ function myAxios(config) {
                 city: code
             }
         }).then(result => {
-            console.log(result);
-            
+            console.log(result)
+            document.querySelector(".header .location").innerHTML = result.data.area
+            document.querySelector(".header .left").innerHTML = 
+            `<span class="time">${result.data.dateShort}</span>
+            <span class="clandar">农历</span>
+            <span class="day">${result.data.dateLunar}</span>`
+
+            document.querySelector(".banner .tempreture").innerHTML = result.data.temperature + `°`
+            document.querySelector(".banner .other .pollution").innerHTML = result.data.psPm25 + result.data.psPm25Level
+            document.querySelector(".banner .other .condition").innerHTML = `<img src=${result.data.weatherImg} alt=""> ${result.data.weather}`
+            document.querySelector(".banner .cloud").value = result.data.windDirection
+            document.querySelector(".banner .class").value = result.data.windPower
+
+            document.querySelector(".today").innerHTML = 
+            `<ul>
+                <li>今天：${result.data.todayWeather.weather}</li>
+                <li>紫外线 ${result.data.todayWeather.ultraviolet}</li>
+                <li>湿度 ${result.data.todayWeather.humidity}</li>
+                <li>日出 ${result.data.todayWeather.sunriseTime}</li>
+                <li>日落 ${result.data.todayWeather.sunsetTime}</li>
+            </ul>`
+
+            const forecast = result.data.dayForecast.map(item => {
+                return `<ul>
+                    <li>${item.dateFormat}</li>
+                    <li><img src=${item.weatherImg} alt=""></li>
+                    <li>${item.weather}</li>
+                    <li>${item.dateFormat}: ${item.weather}-${item.temNight}-${item.temDay}°C</li>
+                    <li>${item.windDirection} &lt;${item.windPower}</li>
+                </ul>`
+            })
+            const forecastStr = forecast.join("")
+            document.querySelector(".contianner .forecast").innerHTML = forecastStr
         }).catch(error => {
             console.dir(error)
         })
     }
 
     getWeather(110100)
+
+    // <img src=${result.data.weatherImg}

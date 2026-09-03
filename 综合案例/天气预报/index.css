@@ -37,6 +37,7 @@ body {
     outline: none;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     opacity: 0.8;
+    color: #333;
 }
 
 /* .header .right input::placeholder {
@@ -80,6 +81,11 @@ body {
     margin-bottom: 10px;
 }
 
+.banner .condition img{
+    width: 20px;
+    height: 20px;
+}
+
 .today ul {
     margin-top: 20px;
     display: flex;
@@ -90,7 +96,7 @@ body {
 /* contianner区域 */
 .contianner {
     height: 400px;
-    background-color: #e5e7eb;
+    background-color: #e7e7e7;
     border-radius: 20px;
 }
 
@@ -108,10 +114,11 @@ body {
 }
 
 .contianner .forecast {
-    margin-top: 100px;
+    margin-top: 70px;
     display: flex;
     justify-content: space-evenly;
 }
+
 
 .contianner .forecast li {
     color: black;
