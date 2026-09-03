@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    color: #f7f7f7;
+}
+
+body {
+    margin: 20px 100px;
+    background-color: rgb(38, 123, 208);
+}
+
+/* header 区域 */
+.header {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    text-align: center;
+    color: #f7f7f7;
+    font-size: 24px;
+}
+
+.header .right {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header .right input {
+    padding: 0 16px;
+    width: 250px;
+    height: 30px;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    outline: none;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    opacity: 0.8;
+}
+
+/* .header .right input::placeholder {
+    color: black;
+} */
+
+.header .right ul {
+    display: none;
+    position: absolute;
+    top: 120px;
+    right: 5px;
+    width: 240px;
+    font-size: 16px;
+    line-height: 24px;
+    background-color: #f7f7f7;
+    color: black;
+}
+
+
+/* banner区域 */
+
+.banner {
+    font-size: 16px;
+}
+
+.banner .detail {
+    display: flex;
+}
+
+.banner .detail .tempreture {
+    line-height: 60px;
+    font-size: 60px;
+    margin-right: 40px;
+}
+
+
+.banner .pollution {
+    border-radius: 30px;
+    background-color: rgb(94, 230, 84);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.today ul {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+}
+
+/* contianner区域 */
+.contianner {
+    height: 400px;
+    background-color: #e5e7eb;
+    border-radius: 20px;
+}
+
+.contianner .title {
+    /* margin: 0 20px; */
+    height: 50px;
+    line-height: 50px;
+    font-size: 26px;
+    color: black;
+    font-weight: 700;
+}
+
+.contianner{
+    padding: 30px 20px;
+}
+
+.contianner .forecast {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.contianner .forecast li {
+    color: black;
+}
