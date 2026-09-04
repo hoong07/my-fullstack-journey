@@ -40,6 +40,7 @@ body {
     color: #333;
 }
 
+
 /* .header .right input::placeholder {
     color: black;
 } */
@@ -47,12 +48,16 @@ body {
 .header .right ul {
     display: none;
     position: absolute;
-    top: 120px;
+    top: 56px;
     right: 5px;
     width: 240px;
     font-size: 16px;
     line-height: 24px;
     background-color: #f7f7f7;
+    color: black;
+}
+
+.header .right li {
     color: black;
 }
 

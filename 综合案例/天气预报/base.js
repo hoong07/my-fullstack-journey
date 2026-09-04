@@ -45,7 +45,7 @@ function myAxios(config) {
                 city: code
             }
         }).then(result => {
-            console.log(result)
+            // console.log(result)
             document.querySelector(".header .location").innerHTML = result.data.area
             document.querySelector(".header .left").innerHTML = 
             `<span class="time">${result.data.dateShort}</span>
@@ -86,3 +86,33 @@ function myAxios(config) {
     getWeather(110100)
 
     // <img src=${result.data.weatherImg}
+
+    // 搜索框
+    document.querySelector(".header .right input").addEventListener("input",(e) =>{
+        // console.log(e.target.value)
+        const res = document.querySelector(".search-result")
+        res.style.display = 'block'
+        myAxios({
+            url: "http://hmajax.itheima.net/api/weather/city",
+            params:{
+                city:e.target.value
+            }
+        }).then(result => {
+            // console.log(result);
+            const searchResStr = result.data.map(item => {
+                return `
+                <li value=${item.code} data-name = ${item.name}>${item.name}</li>
+                `
+            }).join("")
+            res.innerHTML = searchResStr
+        })
+    })
+    document.querySelector(".header .right ul").addEventListener("click",(e) => {
+        if(e.target.tagName == 'LI') {
+            document.querySelector(".header .right .location").innerHTML = e.target.dataset.name
+            getWeather(e.target.value)
+        }
+        // console.log(e.target.tagName);
+        
+    })
+    
