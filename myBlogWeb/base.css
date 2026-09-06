@@ -1,0 +1,57 @@
+:root {
+    /* 主色调: */
+    --primary: 199 200 201;
+    --primary-light: 210 211 214;
+    --primary--dark:132 133 135;
+
+    /* 中性色 渐变过渡 */
+    --text:0 0 0
+}
+
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+.banner {
+    height: 110px;
+    width: 960px;
+    background-color: pink;
+    color: rgb(var(--text));
+}
+
+.banner .top img{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+}
+
+.banner .navigator {
+    margin-left: 100px;
+    height: 30px;
+    width: 600px;
+}
+
+.banner .navigator .nav-button {
+    margin-top: 30px;
+    margin-left: 150px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(var(--primary-light));
+}
+
+/* 贪吃蛇 */
+.snackImg {
+    width: 960px;
+}
+
+.snackImg img {
+    margin-left: 40px;
+}
