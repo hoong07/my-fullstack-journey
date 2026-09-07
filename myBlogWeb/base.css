@@ -15,12 +15,13 @@ html {
 *::before,
 *::after {
     box-sizing: inherit;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
     list-style: none;
 }
 
 .banner {
+    margin: 0 auto;
     height: 110px;
     width: 960px;
     background-color: pink;
@@ -49,9 +50,107 @@ html {
 
 /* 贪吃蛇 */
 .snackImg {
+    margin: 0 auto;
     width: 960px;
 }
 
 .snackImg img {
     margin-left: 40px;
+}
+
+.body {
+    display: flex;
+}
+
+.body .left {
+    margin-left: 100px;
+    position: relative;
+    width: 300px;
+}
+
+/* 个人信息区域 */
+.body .left .information {
+    margin-left: 30px;
+    margin-top: 30px;
+    background-color: skyblue;
+    width: 300px;
+    height: 300px;
+}
+
+.headSculpture {
+    position: absolute;
+    
+}
+
+.body .left .headSculpture img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.body .information .myName,
+.hyperLink {
+    margin-left: 200px;
+}
+
+/* 音乐播放器 */
+.musicPlayer {
+    margin-left: 30px;
+    width: 300px;
+    height: 140px;
+    background-color: pink;
+}
+
+.musicPlayer .song-info {
+    display: flex;
+    justify-content: space-around;
+}
+
+.musicPlayer .song-info .cover {
+    margin-left: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: skyblue;
+}
+
+.musicPlayer .controls {
+    width: 300px;
+    height: 100px;
+}
+
+.musicPlayer .controls .stop,
+.last-song,
+.next-song {
+    border-radius: 50%;
+}
+
+/* 标签区域 */
+.body .left .my-label {
+    width: 300px;
+    height: 200px;
+}
+
+
+/* middle 文章区域 */
+.body .middle {
+    width: 1280px;
+}
+
+/* 时间轴区域 */
+.time-line {
+    position: relative;
+    width: 200px;
+}
+
+/* 中间那条主线 */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #333;
+    transform: translateX(-50%);
 }
