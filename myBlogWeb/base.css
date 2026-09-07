@@ -135,16 +135,18 @@ html {
 /* middle 文章区域 */
 .body .middle {
     width: 1280px;
+    display: none;
 }
 
 /* 时间轴区域 */
 .time-line {
     position: relative;
-    width: 200px;
+    width: 1200px;
+    /* max-width: 700px; */
 }
 
 /* 中间那条主线 */
-.timeline::before {
+.time-line::before {
     content: '';
     position: absolute;
     left: 50%;
@@ -153,4 +155,63 @@ html {
     width: 2px;
     background: #333;
     transform: translateX(-50%);
+}
+
+.node {
+    width: 50%;
+    position: relative;
+}
+
+/* 中间圆点 */
+.node::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #e8c547;
+    border: 3px solid #111;
+    z-index: 1;
+}
+
+.node-left::before {
+    right: 0;
+    transform: translateX(50%);
+}
+
+.node-right::before {
+    left: 0;
+    transform: translateX(-50%);
+}
+
+.node.node-left {
+    left: 0;
+    text-align: right;
+}
+
+.node.node-right {
+    left: 50%;
+    text-align: left;
+}
+
+.node-left .content {
+    margin: auto;
+    width: 400px;
+    /* transform: translateX(-30px); */
+}
+
+.node-right .content {
+    width: 400px;
+    margin: auto;
+    /* transform: translateX(30px); */
+}
+
+.node .content {
+    margin-bottom: 15px;
+}
+
+.node .date,
+.node p {
+    font-size: 12px;
 }
