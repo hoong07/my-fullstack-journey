@@ -43,12 +43,24 @@ html {
     margin: 0 auto;
     height: 70px;
     width: 960px;
-    background-color: var(--glass);
+    /* background-color: var(--glass);
     border-width: 2px;
     border-style: solid;
     border-color: var(--shadow);
     color: var(--text);
-    border-radius: 10px;
+    border-radius: 10px; */
+
+    background: linear-gradient(
+    to bottom,
+    var(--surface-light) 0%,
+    var(--surface) 100%
+    );
+    border: 2px solid var(--glass-edge);
+    border-top-color: var(--glass-border);      /* 上边亮 */
+    box-shadow:
+        0 1px 3px var(--shadow),                   /* 外投影 */
+        inset 0 1px 0 var(--inner-shadow);         /* 内上光 */
+    border-radius: 8px;
 }
 
 .banner .top {
@@ -71,6 +83,48 @@ html {
     display: flex;
     justify-content: center;
     height: 30px;
+}
+
+.banner .navigator .nav-button li {
+    color: var(--text-secondary);
+    text-align: center;
+    line-height: 30px;
+}
+
+.banner .navigator .nav-button .home::before {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url(./assets/windows_vista/vista_netcenter.ico);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
+}
+
+.banner .navigator .nav-button .archives::before {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url(./assets/windows_vista/vista_book_2.ico);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
+}
+
+.banner .navigator .nav-button .about::before {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url(./assets/windows_vista/vista_info.ico);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
 }
 
 .banner .navigator .nav-button li {
@@ -100,14 +154,21 @@ html {
 }
 
 .body .left {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 20px;
     width: 200px;
 }
 
 /* 个人信息区域 */
 .body .left .information {
-    background-color: skyblue;
+    background-color: var(--bg);
     width: 200px;
     height: 200px;
+    border-width: 3px;
+    border-style: inset;
+    border-color: var(--bg-deep);
+    color: var(--text);
 }
 
 .headSculpture {
@@ -122,6 +183,18 @@ html {
     border-radius: 50%;
 }
 
+/* 超链接 */
+.information .hyperLink {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.information .hyperLink  a img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
 .body .information .myName,
 .hyperLink {
     margin-left: 100px;
@@ -129,7 +202,6 @@ html {
 
 /* 音乐播放器 */
 .musicPlayer {
-    /* margin-left: 30px; */
     width: 200px;
     height: 80px;
     background-color: pink;
@@ -150,7 +222,8 @@ html {
 
 .musicPlayer .controls {
     width: 200px;
-    height: 80px;
+    height: 30px;
+    background-color: skyblue;
 }
 
 .musicPlayer .controls .stop,
