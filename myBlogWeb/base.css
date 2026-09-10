@@ -38,11 +38,17 @@ html {
     list-style: none;
 }
 
+img,video {
+    max-width: 100%;
+    height: auto;
+}
+
 .banner {
     position: relative;
-    margin: 0 auto;
+    margin: 30px auto;
     height: 70px;
-    width: 960px;
+    width: 100%;
+    max-width: 960px;
     /* background-color: var(--glass);
     border-width: 2px;
     border-style: solid;
@@ -68,10 +74,9 @@ html {
 }
 
 .banner .navigator {
-    position: absolute;
-    right: -20px;
-    top: 60px;
-    width: 550px;
+    max-width: 550px;
+    width: 100%;
+    transform: translate(76%,70%);
     border-radius: 30px;
     background-color: var(--glass);
     border-width: 3px;
@@ -83,19 +88,20 @@ html {
     display: flex;
     justify-content: center;
     height: 30px;
+    
 }
 
 .banner .navigator .nav-button li {
     color: var(--text-secondary);
     text-align: center;
-    line-height: 30px;
+    line-height: 1em;
 }
 
 .banner .navigator .nav-button .home::before {
     content: '';
     display: inline-block;
-    width: 30px;
-    height: 30px;
+    width: 1em;
+    height: 1em;
     background-image: url(./assets/windows_vista/vista_netcenter.ico);
     background-size: contain;
     background-repeat: no-repeat;
@@ -106,8 +112,8 @@ html {
 .banner .navigator .nav-button .archives::before {
     content: '';
     display: inline-block;
-    width: 30px;
-    height: 30px;
+    width: 1em;
+    height: 1em;
     background-image: url(./assets/windows_vista/vista_book_2.ico);
     background-size: contain;
     background-repeat: no-repeat;
@@ -118,8 +124,8 @@ html {
 .banner .navigator .nav-button .about::before {
     content: '';
     display: inline-block;
-    width: 30px;
-    height: 30px;
+    width: 1em;
+    height: 1em;
     background-image: url(./assets/windows_vista/vista_info.ico);
     background-size: contain;
     background-repeat: no-repeat;
@@ -128,36 +134,59 @@ html {
 }
 
 .banner .navigator .nav-button li {
-    width: 100px;
+    max-width: 100px;
+    width: 20%;
 }
 
 .banner .navigator .nav-button li:hover {
-    background-color: var(--bg-deep);
+    /* background-color: var(--bg-deep); */
+    background: linear-gradient(
+        to bottom,
+        #f0f3f7 0%,
+        #dbdce2 50%,
+        #c5c9cf 100%
+    );
+}
+
+.banner .navigator .nav-button li:active {
+    background: linear-gradient(
+        to bottom,
+        #b0b4ba 0%,
+        #c5c9cf 50%,
+        #d0d4da 100%
+    );
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.15);
 }
 
 /* 贪吃蛇 */
 .snackImg {
     margin: 0 auto;
-    width: 960px;
+    max-width: 960px;
+    width: 100%;
+    background-color: var(--bg-deep);
+    /* border: solid 4px var(--bg-deep) inset; */
 }
 
 .snackImg img {
-    margin-left: 40px;
+    /* margin-left: 40px; */
+    width: 100%;
 }
 
 .body {
     display: grid;
-    margin: 0 auto;
-    grid-template-columns: minmax(0,1fr) 2.5fr;
+    margin: 30px auto;
+    padding: 0 16px;
+    grid-template-columns: 220px minmax(0,1fr);
     gap: 20px;
-    width: 1020px;
+    max-width: 1020px;
+    width: 100%;
 }
 
 .body .left {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 20px;
-    width: 200px;
+    width: auto;
 }
 
 /* 个人信息区域 */
@@ -247,7 +276,8 @@ html {
     /* display: grid; */
     margin: 0 auto;
     position: relative;
-    width: 800px;
+    max-width: 800px;
+    width: 100%;
     /* max-width: 700px; */
     border: 1px solid black;
 }

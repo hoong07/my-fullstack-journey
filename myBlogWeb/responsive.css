@@ -1,0 +1,9 @@
+@media (max-width: 768px) {
+    .body {
+        grid-template-columns: minmax(0,1fr);
+    }
+    
+    .body .left {
+        display: none;
+    }
+}
