@@ -6,22 +6,23 @@
 }
 
 @media (max-width: 768px) {
-    .banner .top img {
+    .banner .header img {
         display: block;
         /* width: 40px;
         height: 40px; */
     }
     
-    .body {
+    .main {
         grid-template-columns: minmax(0,1fr);
     }
     
-    .body .left {
+    .main .aside {
         display: none;
     }
 }
 
-@media (max-width: 390px) {
+/* 处理时间线 的响应式 */
+@media (max-width: 430px) {
     .time-line::before {
         content: '';
         position: absolute;
@@ -46,11 +47,53 @@
     z-index: 1;
     }
 
-    .node.node-left .content,
-    .node.node-right .content {
+    .node.node-even .content,
+    .node.node-odd .content {
         /* margin: 0 15px; */
         padding-left: 10px;
         width: 100%;
         text-align: left;
+    }
+}
+
+@media (min-width: 1024px) {
+    .banner .navigator .nav-button li:hover {
+    /* background-color: var(--bg-deep); */
+    background: linear-gradient(
+        to bottom,
+        #f0f3f7 0%,
+        #dbdce2 50%,
+        #c5c9cf 100%
+        );
+    }
+}
+
+/* 媒体查询 暗黑主题色 */
+@media (prefers-color-scheme: dark) {
+    :root {
+    /* 主色调: 基础灰*/
+    --bg: #c8c8cc;
+    --bg-deep: #b0b4b8;
+
+    /* 玻璃面板 */
+    --surface: #dde1e6;
+    --surface-light:#eaeef3;
+    --glass: rgba(255,255,255,0.55);/*毛玻璃*/
+    --glass-border: rgba(255,255,255,0.7);/*玻璃上边缘高光*/
+    --glass-edge: rgba(0,0,0,0.12);  /* 玻璃底部暗边 */
+     /* 高光  阴影*/
+     --gloss: rgba(255,255,255,0.85); /*按钮顶部光泽*/
+     --inner-shadow: rgba(255,255,255,0.5);/* 内部柔光 */
+     --shadow: rgba(0,0,0,0.18);/* 外部投影 */
+
+     /* 强调色 */
+     --accent: #4f9ef8; /*经典蓝色*/
+     --accent-light: #6db3fc;/* 蓝色高光 */
+     --accent-deep: #2b6fca; /*蓝色按压态*/
+
+     /* 文字 */
+     --text: #1c1e22; /*主字体*/
+     --text-secondary: #555b66;/* 辅助字体 */
+     --text-on-accent: #ffffff;/* 强调色上面的白字 */
     }
 }
