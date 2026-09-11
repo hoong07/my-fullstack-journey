@@ -69,11 +69,19 @@ img,video {
     border-radius: 8px;
 }
 
+.banner .top img {
+    display: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
 .banner .top {
     text-align: right;
 }
 
 .banner .navigator {
+    flex-wrap: wrap;
     max-width: 550px;
     width: 100%;
     transform: translate(76%,70%);
@@ -176,7 +184,7 @@ img,video {
     display: grid;
     margin: 30px auto;
     padding: 0 16px;
-    grid-template-columns: 220px minmax(0,1fr);
+    grid-template-columns: minmax(0,200px) minmax(0,1fr);
     gap: 20px;
     max-width: 1020px;
     width: 100%;
@@ -185,15 +193,19 @@ img,video {
 .body .left {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: minmax(0,1fr);
     gap: 20px;
     width: auto;
 }
 
 /* 个人信息区域 */
 .body .left .information {
+    /* position: relative; */
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: minmax(auto,1fr) minmax(0,1fr);
     background-color: var(--bg);
-    width: 200px;
-    height: 200px;
+    width: 100%;
     border-width: 3px;
     border-style: inset;
     border-color: var(--bg-deep);
@@ -201,9 +213,9 @@ img,video {
 }
 
 .headSculpture {
-    position: absolute;
-    top: 230px;
-    left: 180px;
+    /* margin: 0 auto; */
+    width: fit-content;
+    transform: translate(-35%,-35%);
 }
 
 .body .left .headSculpture img{
@@ -224,14 +236,19 @@ img,video {
     border-radius: 50%;
 }
 
-.body .information .myName,
+.information .info-bottom {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+/* .body .information .myName,
 .hyperLink {
     margin-left: 100px;
-}
+} */
 
 /* 音乐播放器 */
 .musicPlayer {
-    width: 200px;
+    width: 100%;
     height: 80px;
     background-color: pink;
 }
@@ -250,7 +267,7 @@ img,video {
 }
 
 .musicPlayer .controls {
-    width: 200px;
+    width: 100%;
     height: 30px;
     background-color: skyblue;
 }
@@ -263,8 +280,8 @@ img,video {
 
 /* 标签区域 */
 .body .left .my-label {
-    width: 300px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -297,13 +314,14 @@ img,video {
 .node {
     width: 100%;
     position: relative;
+    margin-bottom: 20px;
 }
 
 /* 中间圆点  始终在中轴线*/
 .node::before {
     content: '';
     position: absolute;
-    top: 10px;
+    /* top: 10px; */
     left: 50%;
     transform: translateX(-50%);
     width: 14px;
@@ -319,14 +337,14 @@ img,video {
     width: calc(50% - 25px);
     margin-right: auto;
     text-align: right;
-    background-color: #caf9cc;
+    /* background-color: #caf9cc; */
 }
 
 .node.node-right .content {
     width: calc(50% - 25px);
     margin-left: auto;
     text-align: left;
-    background-color: #caf9cc;
+    /* background-color: #caf9cc; */
 }
 
 .node .date,

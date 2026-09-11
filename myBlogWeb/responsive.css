@@ -1,9 +1,56 @@
+@media (max-width: 962px) {
+    .banner .navigator {
+        margin-left: 50%;
+        transform: translate(-50%,70%);
+    }
+}
+
 @media (max-width: 768px) {
+    .banner .top img {
+        display: block;
+        /* width: 40px;
+        height: 40px; */
+    }
+    
     .body {
         grid-template-columns: minmax(0,1fr);
     }
     
     .body .left {
         display: none;
+    }
+}
+
+@media (max-width: 390px) {
+    .time-line::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: #333;
+        /* transform: translateX(-50%); */
+    }
+
+    .node::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    /* transform: translateX(-50%); */
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #e8c547;
+    border: 3px solid #111;
+    z-index: 1;
+    }
+
+    .node.node-left .content,
+    .node.node-right .content {
+        /* margin: 0 15px; */
+        padding-left: 10px;
+        width: 100%;
+        text-align: left;
     }
 }
