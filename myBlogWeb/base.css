@@ -2,6 +2,7 @@
     /* 主色调: 基础灰*/
     --bg: #c8c8cc;
     --bg-deep: #b0b4b8;
+    --bg-deeper: #9d9e9e;
 
     /* 玻璃面板 */
     --surface: #dde1e6;
@@ -45,6 +46,18 @@ html {
 img,video {
     max-width: 100%;
     height: auto;
+}
+
+/* 隐藏类 控制元素显示 */
+.hidden {
+    display: none !important;
+}
+
+/* 活跃类 ，当前选中的页 */
+.active {
+    background: rgba(99, 102, 241, 0.15);  /* 主题色半透明 */
+    border-color: rgba(99, 102, 241, 0.6);
+    color: #818cf8;
 }
 
 .banner {
@@ -102,16 +115,22 @@ img,video {
     display: flex;
     justify-content: center;
     height: 30px;
-    
 }
 
 .banner .navigator .nav-button li {
+    max-width: 100px;
+    width: 20%;
     color: var(--text-secondary);
     text-align: center;
-    line-height: 1em;
+    /* height: 100%; */
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
 }
 
-.banner .navigator .nav-button .home::before {
+
+
+/* .banner .navigator .nav-button .home::before {
     content: '';
     display: inline-block;
     width: 1em;
@@ -145,12 +164,8 @@ img,video {
     background-repeat: no-repeat;
     background-position: center;
     vertical-align: middle;
-}
+} */
 
-.banner .navigator .nav-button li {
-    max-width: 100px;
-    width: 20%;
-}
 
 
 
@@ -169,12 +184,14 @@ img,video {
     margin: 0 auto;
     max-width: 960px;
     width: 100%;
-    background-color: var(--bg-deep);
-    /* border: solid 4px var(--bg-deep) inset; */
+    background-color: var(--accent-light);
+    border-radius: 15px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: var(--accent-deep);
 }
 
 .snackImg img {
-    /* margin-left: 40px; */
     width: 100%;
 }
 
@@ -251,7 +268,9 @@ img,video {
 .musicPlayer {
     width: 100%;
     min-height: 80px;
-    background-color: pink;
+    background-color: var(--bg-deep);
+    border-radius: 6px;
+    border: 2px solid var(--text-secondary);
 }
 
 .musicPlayer .song-info {
@@ -272,7 +291,14 @@ img,video {
     justify-content: space-evenly;
     width: 100%;
     min-height: 30px;
-    background-color: skyblue;
+    background-color: var(--bg-deeper);
+    border-radius: 5px;
+    border: 1px solid var(--text-secondary);
+}
+
+.musicPlayer .controls .iconfont{
+    font-size: 16px;
+    text-align: center;
 }
 
 .musicPlayer .controls .stop,
@@ -281,7 +307,14 @@ img,video {
     border-radius: 50%;
     width: 30px;
     height: 30px;
-    background-color: #fff;
+    line-height: 30px;
+    background: var(--bg) linear-gradient(
+        to bottom,
+        #d0d4da 0%,
+        #c5c9cf 50%,
+        #b0b4ba 100%
+    );
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.15);
 }
 
 /* 标签区域 */
@@ -308,7 +341,73 @@ img,video {
 
 
 /* middle 文章区域 */
+.article {
+    margin: 0 auto;
+    position: relative;
+    max-width: 800px;
+    width: 100%;
 
+    /* background: linear-gradient(
+    to bottom,
+    var(--surface-light) 0%,
+    var(--surface) 100%
+    );
+    border: 2px solid var(--glass-edge);
+    border-top-color: var(--glass-border);      */
+    box-shadow:
+        0 1px 3px var(--shadow),                   
+        inset 0 1px 0 var(--inner-shadow);         
+    border-radius: 8px; 
+}
+
+.article .content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.article .content li {
+    background-color: var(--bg);
+    border-width: 3px;
+    border-style: inset;
+    border-color: var(--bg-deep);
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.article .content li:hover {
+    transform: scale(1.03) translateY(-10px);
+    transition: .3s;
+}
+
+.article .content li h3 {
+    font-weight: 400;
+    color: var(--text);
+}
+
+/* 文章详细 */
+.content-area .post {
+    background: linear-gradient(
+    to bottom,
+    var(--surface-light) 0%,
+    var(--surface) 100%
+    );
+    border: 2px solid var(--glass-edge);
+    border-top-color: var(--glass-border);      /* 上边亮 */
+    box-shadow:
+        0 1px 3px var(--shadow),                   /* 外投影 */
+        inset 0 1px 0 var(--inner-shadow);         /* 内上光 */
+    border-radius: 8px;
+}
+
+.content-area .post h3 {
+    font-weight: 400;
+    color: var(--text);
+}
+
+.content-area .post p {
+    color: var(--text-secondary);
+}
 
 /* 时间轴区域 */
 .time-line {
@@ -358,8 +457,8 @@ img,video {
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background: #e8c547;
-    border: 3px solid #111;
+    background: #92c9de;
+    border: 3px solid #83bcf5;
     z-index: 1;
 }
 

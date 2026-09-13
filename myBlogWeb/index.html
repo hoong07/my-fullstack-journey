@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hoong's blog</title>
-    <link rel="icon" href="assets/Icon1.webp" type="image/x-icon">
+    <!-- <link rel="icon" href="assets/Icon1.webp" type="image/x-icon"> -->
     <link rel="stylesheet" href="./base.css">
     <link rel="stylesheet" href="./responsive.css">
+    <link rel="stylesheet" href="./assets/ico-font/iconfont.css">
 </head>
 <body>
     <!-- 顶部头部区域 -->
     <div class="banner">
         <div class="header">
             <img src="./assets/headScupture.jpg" alt="头像">
-            <i class="blog-title">程艾影</i>
+            <i class="blog-title">1Sheep ---- 一只羊的个人博客</i>
         </div>
         <div class="navigator">
             <ul class="nav-button">
-                <li class="home">Home</li>
-                <li class="archives">Journey</li>
-                <li class="about">About</li>
+                <li class="home active icofont icon-shouye" data-nav="home">Home</li>
+                <li class="journey icofont icon-xiansuoku" data-nav="journey">Journey</li>
+                <li class="about iconfont icon-guanyu" data-nav="about">About</li>
             </ul>
         </div>
     </div>
@@ -45,8 +46,8 @@
                         <div class="myName">Hoong Lee</div>
                         <!-- 链接 github 啥的 -->
                         <div class="hyperLink">
-                            <a href="#"><img src="./assets/github.png" alt="github"></a>
-                            <a href="#"><img src="./assets/csdn.png" alt="csdn"></a>
+                            <a href="https://github.com/hoong07"><img src="./assets/github.png" alt="github"></a>
+                            <a href="https://blog.csdn.net/2503_93342134?spm=1000.2115.3001.5343"><img src="./assets/csdn.png" alt="csdn"></a>
                         </div>
                     </div>
                 </div>
@@ -72,9 +73,9 @@
 
                  <!-- 歌曲控制面板 -->
                   <div class="controls">
-                    <div class="stop">1</div>
-                    <div class="last-song">2</div>
-                    <div class="next-song">3</div>
+                    <div class="last-song iconfont icon-last"></div>
+                    <div class="stop iconfont icon-bofangqi-zanting"></div>
+                    <div class="next-song iconfont icon-xiayishou"></div>
                   </div>
             </div>
 
@@ -92,76 +93,117 @@
         </div>
 
         <!-- 第二栏 -->
+        <div class="content-area">
+                <section class="article" data-section="home">
+                    <ul class="content">
+                <li data-list="my-experience">
+                    <h3>个人经历的记录</h3>
+                    <br>
+                    <p>从本科入学到最近状态的相比时间线更详细的记录。有像大部分大一同学一样，随波逐流，不旷课也不学习，也有像很多同学一样，认识到自学的重要性后开始转性，当然这也不是一蹴而就的。</p>
+                    <br>
+                    <small>持续更新中......</small>
+                </li>
+                <li data-list="first-thinking">
+                    <h3>对普通大学生普遍现状的思考</h3>
+                    <br>
+                    <p>怎么看待大学像高中一样只是随波逐流？没有思考，只是看到身边有的人准备考研便也去学，看到身边有人为了保研去卷绩点，便也去卷绩点，但是大部分人还是躺平，gaming，考试前一两周，抱佛脚，他们虽然不旷课，但是也并没有好好学习。</p>
+                    <br>
+                    <small>2026年5月7日</small>
+                </li>
+                    </ul>
+                    <!-- 文章详细 -->
+                    <button type="button" class="post-back hidden">← 返回列表</button>
+                    <article class="post hidden" data-post="my-experience"> …详情… </article>
+                    <article class="post hidden" data-post="first-thinking"> 
+                        <h3>大学第一个思考</h3>
+                        <br>
+                        <p>我第一次开始这个思考，是大一下学期的时候：
+                            <br><br>
+                            当时是大物期中考试，由于大一上我基本没咋学习，就是游戏 + 上课想听就听，不想听就不听，优秀率100%，并且当时我以为出自湖南，高考也算是失误才来到这个学校，自认为智商和能力高于大部分外省份的，所以很理所当然。然而那一次期中考试，我身边的人基本上都是90+，而我只有79。
+                            <br><br>
+                            我开始愧疚我平常上课没有好好听，我在后悔提前交卷没检查，但是想着想着，我突然意识到高数大物这些通识课似乎对就业没什么帮助，然后开始刷抖音，再到知乎，再到牛客，发现很多手中有不错offer的人，很早就开始技术栈的学习了，而不是把大把时间花在这些理论课上，甚至很多大牛经常是旷课去学习一些技术，因为知道学校的课，不管是专业课还是水课，其实都很水。
+                            <br><br>
+                            似乎害怕绩点落后，排名落后，成绩不好这些都是高中那种学生思维带来的荼毒，然后我也决心开始自主学习技术栈，从前端开始，目标是全栈工程师，于是我就开始了自学之旅。
+                            <br><br>
+                            当然喽，大学也是一个资源丰富的地方，就拿我们学校来说，就有很多学生成立的项目，甚至在准备开公司，各种老师也有很多科研项目，也有很多放松心情，财经类，法律类的课程，你可以学习。这些资源都是可以利用的，所以也不是极端地去拒绝学校，去远离学校的课程，而是挑选真正对你有帮助的课程去学习，水课就逃，没用的课就逃，与其受那一个半小时的煎熬，还不如去健身，甚至说‘耍起’。</p>
+                    </article>
+                </section>
 
-
-        <!-- 第三栏 -->
-        <!-- 时间轴 -->
-        <div class="time-line">
-            <!-- 每一个单独的时间节点 -->
-            <div class="node node-even">
-                <div class="content">
-                    <div class="date">2025年9月</div>
-                    <h3>平平无奇的开端</h3>
-                    <p>跟着学校进度，开始c语言，靠着高中的英语水平，把四级过了，头脑一热，还报名了蓝桥杯</p>
-                </div>
-            </div>
-
-            <div class="node node-odd">
-                <div class="content">
-                    <div class="date">2025年9月</div>
-                    <h3>学校第一次开专业讲座</h3>
-                    <p>第一次认识到ai对行业的冲击，以及开始对考研和直接就业的思考</p>
-                </div>
-            </div>
-
-            <div class="node node-even">
-                <div class="content">
-                    <div class="date">2025年9月</div>
-                    <h3>寒假躺平</h3>
-                    <p>由于拖延症，原本计划准备蓝桥杯的寒假不出意外的，荒废了</p>
-                </div>
-            </div>
-
-            <div class="node node-odd">
-                <div class="content">
-                    <div class="date">2025年9月</div>
-                    <h3>开学冲刺</h3>
-                    <p>一周浅浅学了语法，一周学了stl和二分和前缀和</p>
-                </div>
-            </div>
-    
-            <div class="node node-even">
-                <div class="content">
-                    <div class="date">2025年9月</div>
-                    <h3>A组省二，“第二次开智”</h3>
-                    <p>运气好，学的都考了，拿了个省二，然后刷到了千千，意识到要开始主动学习了</p>
-                </div>
-            </div>
-
-            <div class="node node-odd">
-                <div class="content">
-                    <div class="date">2025年9月</div>
-                    <h3>第一阶段</h3>
-                    <p>把HTML，CSS学了，然后开始JS，确认了将来走TS+agent全栈的路线</p>
+                <!-- 时间轴 -->
+                <section class="time-line hidden" data-section="journey">
+                <!-- 每一个单独的时间节点 -->
+                <div class="node node-even">
+                    <div class="content">
+                        <div class="date">2025年9月</div>
+                        <h3>平平无奇的开端</h3>
+                        <p>跟着学校进度，开始c语言，靠着高中的英语水平，把四级过了，头脑一热，还报名了蓝桥杯</p>
                     </div>
-            </div>
-
-            <div class="node node-even">
-                <div class="content">
-                    <div class="date">2025年9月</div>
-                    <h3>第一个暑假</h3>
-                    <p>断掉了前面的自律，好在完成了最低限度：完成js，每天力扣打卡</p>
                 </div>
-            </div>
 
-            <div class="node node-odd">
-                <div class="content">
-                    <div class="date">2025年9月</div>
-                    <h3>大二开学</h3>
-                    <p>一周速过axios，开始写个人博客和React的学习</p>
+                <div class="node node-odd">
+                    <div class="content">
+                        <div class="date">2025年12月</div>
+                        <h3>学校第一次开专业讲座</h3>
+                        <p>第一次认识到ai对行业的冲击，以及开始对考研和直接就业的思考</p>
+                    </div>
                 </div>
-            </div>
+
+                <div class="node node-even">
+                    <div class="content">
+                        <div class="date">2026年1月</div>
+                        <h3>寒假躺平</h3>
+                        <p>由于拖延症，原本计划准备蓝桥杯的寒假不出意外的，荒废了，只学了'cin/cout'</p>
+                    </div>
+                </div>
+
+                <div class="node node-odd">
+                    <div class="content">
+                        <div class="date">2026年3月</div>
+                        <h3>临阵磨枪</h3>
+                        <p>一周浅浅学了语法，一周学了stl和二分和前缀和，草草参加比赛</p>
+                    </div>
+                </div>
+        
+                <div class="node node-even">
+                    <div class="content">
+                        <div class="date">2026年5月</div>
+                        <h3>A组省二，“第二次开智”</h3>
+                        <p>运气好，学的都考了，拿了个省二，然后刷到了千千，意识到要开始主动学习了</p>
+                    </div>
+                </div>
+
+                <div class="node node-odd">
+                    <div class="content">
+                        <div class="date">2026年6月</div>
+                        <h3>第一阶段</h3>
+                        <p>把HTML，CSS学了，然后开始JS，确认了将来走TS+agent全栈的路线</p>
+                        </div>
+                </div>
+
+                <div class="node node-even">
+                    <div class="content">
+                        <div class="date">2026年8月</div>
+                        <h3>第一个暑假</h3>
+                        <p>断掉了前面的自律，好在完成了最低限度：完成js的学习，每天力扣打卡</p>
+                    </div>
+                </div>
+
+                <div class="node node-odd">
+                    <div class="content">
+                        <div class="date">2026年9月</div>
+                        <h3>大二开学</h3>
+                        <p>一周速过axios，开始写个人博客和React的学习</p>
+                    </div>
+                </div>
+                </section>
+
+                <!-- 关于区域 -->
+                 <section class="about hidden" data-section="about"></section>
+            
         </div>
+
       </div>
+
+      <script src="./main.js"></script>
 </body>
 </html>
