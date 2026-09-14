@@ -61,8 +61,11 @@ img,video {
 }
 
 .banner {
-    position: relative;
-    margin: 30px auto;
+    /* position: relative; */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    margin: 0 auto 30px;
     height: 70px;
     width: 100%;
     max-width: 960px;
@@ -88,8 +91,8 @@ img,video {
 
 .banner .header img {
     display: none;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
 }
 
@@ -196,6 +199,7 @@ img,video {
 }
 
 .main {
+    position: relative;
     display: grid;
     margin: 30px auto;
     padding: 0 16px;
@@ -216,7 +220,7 @@ img,video {
 .main .aside .information {
     /* position: relative; */
     display: grid;
-    grid-template-rows: minmax(0,0.7fr) 1fr;
+    grid-template-rows: minmax(0,0.7fr) minmax(0,1fr);
     grid-template-columns: minmax(auto,1fr) minmax(0,1fr);
     background-color: var(--bg);
     width: 100%;
@@ -400,9 +404,11 @@ img,video {
     border-radius: 8px;
 }
 
-.content-area .post h3 {
+.content-area .post h3,
+.content-area .post h4 {
     font-weight: 400;
     color: var(--text);
+    text-align: center;
 }
 
 .content-area .post p {

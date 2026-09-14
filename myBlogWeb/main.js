@@ -13,7 +13,12 @@ const state = {
 }
 
 const section = document.querySelectorAll('section')
-console.log(section);
+// console.log(section);
+
+// aside 侧边栏
+const aside = document.querySelector('.main .aside')
+// 移动端 顶部小头像:
+const headButton = document.querySelector('.banner .header img')
 
 // 文章列表
 const post = document.querySelectorAll('article')
@@ -38,6 +43,10 @@ const render = () => {
     })
 
     // aside 的 打开栏 -> 看是否在窄屏
+    aside.classList.toggle('open',state.asideOpen)
+    console.log(111);
+    
+    // state.asideOpen && aside.setAttribute('display','flex')
 }
 
 // 给state 写入状态
@@ -63,6 +72,14 @@ post_list.addEventListener('click',(e) => {
     if(!post) return
     go({post:post.dataset.list})
 })
+
+// 移动端： 点击上面的小头像 -> 显示侧边栏
+headButton.addEventListener('click',() => {
+    state.asideOpen = !state.asideOpen
+    console.log(state.asideOpen);
+    render()
+})
+
 
 // 页面首次渲染 可以删除html 预写好的类名
 render()
