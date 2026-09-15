@@ -18,8 +18,8 @@
         </div>
         <div class="navigator">
             <ul class="nav-button">
-                <li class="home active icofont icon-shouye" data-nav="home">Home</li>
-                <li class="journey icofont icon-xiansuoku" data-nav="journey">Journey</li>
+                <li class="home active iconfont icon-shouye" data-nav="home">Home</li>
+                <li class="journey iconfont icon-xiansuoku" data-nav="journey">Journey</li>
                 <li class="about iconfont icon-guanyu" data-nav="about">About</li>
             </ul>
         </div>
@@ -58,24 +58,26 @@
                 </div>
             </div>
 
+
             <!-- 左边模块二 -->
             <!-- 音乐播放器 -->
             <div class="musicPlayer">
+                <audio id="bgMusic" src="./bgMusic/wulai.mp3"></audio>
                 <!-- 歌曲信息： -->
                  <div class="song-info">
                     <!-- 封面 -->
-                    <div class="cover"><img src="" alt=""></div>
+                    <div class="cover"></div>
                     <!-- 右边详细信息 -->
                     <div class="song-detail">
-                        <div class="title">golden steps</div>
-                        <div class="singer">xxxtantacion</div>
+                        <div class="title">卡农</div>
+                        <div class="singer">dylanf</div>
                     </div>
                  </div>
 
                  <!-- 歌曲控制面板 -->
                   <div class="controls">
                     <div class="last-song iconfont icon-last"></div>
-                    <div class="stop iconfont icon-bofangqi-zanting"></div>
+                    <div class="stop"><i class="iconfont icon-bofangqi-zanting"></i></div>
                     <div class="next-song iconfont icon-xiayishou"></div>
                   </div>
             </div>
@@ -103,6 +105,13 @@
                     <p>从本科入学到最近状态的相比时间线更详细的记录。有像大部分大一同学一样，随波逐流，不旷课也不学习，也有像很多同学一样，认识到自学的重要性后开始转性，当然这也不是一蹴而就的。</p>
                     <br>
                     <small>持续更新中......</small>
+                </li>
+                <li data-list="brian-science">
+                    <h3>脑科学笔记</h3>
+                    <br>
+                    <p>记录了从TED，还有抖音精选学的一些脑科学知识的笔记</p>
+                    <br>
+                    <small>2026年6月26日</small>
                 </li>
                 <li data-list="first-thinking">
                     <h3>对普通大学生普遍现状的思考</h3>
@@ -134,6 +143,32 @@
                         <h4>八.开始写个人博客网站，开始React的学习</h4>
                         <p>学完Ajax就开始写个人博客了，也就是这个网站，然后开始React，网站大概花了一周时间。<br>
                         然后这段时间学校课特别多，而且都是大物，离散，线代这些考核严格的课程，我也不是很想逃，因为后期考前还要拼死拼活地看网课，反正也就9周课，忍忍到后半学期就舒服了。</p>
+                    </article>
+                    <article class="post hidden" data-post="brian-science">
+                        <h3>脑科学笔记</h3>
+                        <br>
+                        <h4>大脑严重</h4>
+                        <p>大概就是说每天大脑都处于一个低功耗的状态，但是大部分人的大脑正常来说就是两个状态：“工作”、“休息”，需要长思考，集中注意力的情况下，就是“工作”状态，而平常：休息，散步，吃饭都是“休息”状态，而我们经常刷抖音，焦虑，发呆，实际上都是让大脑处在一个低功耗的“工作状态”，这是很消耗心神的，所以你每天都很疲惫，尽管你到最后什么都没有吸收到，什么都没有学会······
+                        <br>
+                        然后后面学到的另一个东西就是关于生物节律清洗大脑的东西，大概就是说人在深度睡眠的时候，大脑会自动清洗老废杂质，具体理论不记得了。</p>
+                        <br>
+                        <h4>大脑隐性疲劳</h4>
+                        <p>每天睡8小时但是依旧感觉很累，就是大脑一直处于隐性疲劳;方法论就是：固定生活节律</p>
+                        <ol>
+                            <li>1.固定时间起床，并且接受5分钟左右阳光</li>
+                            <li>2.低中强度有氧：散步、慢跑、骑车</li>
+                            <li>3.降低决策密度：把决策用在重要的、需要深度思考的事情上面</li>
+                        </ol>
+                        <br>
+                        <h4>放松前额叶</h4>
+                        <p>出去，在户外，0社交，不用手机，不想任何事情，就是集中在当下，感受户外，感受这条你没走过的路线，探索这条新路线。</p>
+                        <br>
+                        <h4>关于记忆东西</h4>
+                        <p>比如记单词：看 + 写 + 读 == 三次记忆。因为大脑可以通过视觉，运动，听觉三种独立编码通道，来存储同一个信息，最后调用这个信息的时候通过任意一个通道来提取。</p>
+                        <p>然后边走边背比坐着创造性思维提升60%，记忆保留率也提高40%</p>
+                        <br>
+                        <h4>关于午睡</h4>
+                        <p>30～60分钟是最差的午睡时长，真正有效的睡眠长度是：20分钟和90分钟，并且这个时间是只包含真正在睡眠的时间。然后可以通过coffee nap，就是睡前一杯coffee，起效时间刚好是20分钟，所以醒来就是1+1>2</p>
                     </article>
                     <article class="post hidden" data-post="first-thinking"> 
                         <h3>大学第一个思考</h3>

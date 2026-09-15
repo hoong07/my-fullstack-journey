@@ -10,6 +10,7 @@ const state = {
   section:   'home',  // home | journey | about   —— 导航栏三选一
   post:      null,    // null = 文章列表；'slug' = 某篇详情
   asideOpen: false,   // 只在窄屏有意义
+  currentIndex :0   //当前歌曲 曲数
 }
 
 const section = document.querySelectorAll('section')
@@ -19,6 +20,25 @@ const section = document.querySelectorAll('section')
 const aside = document.querySelector('.main .aside')
 // 移动端 顶部小头像:
 const headButton = document.querySelector('.banner .header img')
+// 音乐盒
+const audio = document.querySelector('#bgMusic')
+const bgmButton = document.querySelector('.musicPlayer .controls .stop')
+const lastSong = document.querySelector('.musicPlayer .controls .last-song')
+const nextSong = document.querySelector('.musicPlayer .controls .next-song')
+// 音乐盒的信息
+const bgmCover = document.querySelector('.musicPlayer .song-info .cover')
+const bgmTitle = document.querySelector('.musicPlayer .song-info .song-detail .title')
+const bgmSinger = document.querySelector('.musicPlayer .song-info .song-detail .singer')
+
+// 音乐库 对象
+const bgmInfo = [
+    {src: './bgMusic/kanong.mp3',name: '卡农',author: 'dylanf',imgSrc: './bgMusic/kanong.jpg'},
+    {src: './bgMusic/haiguixiansheng.mp3',name: '男孩别哭',author: '海龟先生',imgSrc: './bgMusic/haiguixiansheng.jpg'},
+    {src: './bgMusic/unhappy.mp3',name: 'unhappy',author: 's0rrow',imgSrc: './bgMusic/unhappy.jpg'},
+    {src: './bgMusic/zongyouyitian.mp3',name: '总有一天你会出现在我身边',author: '棱镜乐队',imgSrc: './bgMusic/zongyouyitian.jpg'},
+    {src: './bgMusic/wulai.mp3',name: '无赖',author: '郑中基',imgSrc :'./bgMusic/wulai.jpg'}
+]
+
 
 // 文章列表
 const post = document.querySelectorAll('article')
@@ -41,16 +61,23 @@ const render = () => {
 
     // tab 栏 当前活跃 active 项
     nav.forEach(item => {
-        item.classList.toggle('active',item.dataset.section === state.section)
+        item.classList.toggle('active',item.dataset.nav === state.section)
     })
 
     // aside 的 打开栏 -> 看是否在窄屏
     aside.classList.toggle('open',state.asideOpen)
-    console.log(111);
+    // console.log(111);
     // state.asideOpen && aside.setAttribute('display','flex')
 
     // 根据post 是否不为null 来判断是否显示postButton
     postButton.classList.toggle('hidden',!state.post)
+
+    // 根据 audio 的 属性，判断中间是 暂停 还是 开始
+    const ico = audio.paused ? 'iconfont icon-bofangqi-bofang' : 'iconfont icon-bofangqi-zanting'
+    bgmButton.innerHTML = `<i class="iconfont ${ico}"></i>`
+
+    // 根据index 来判断是哪一首歌
+
 }
 
 // 给state 写入状态
@@ -90,6 +117,38 @@ postButton.addEventListener('click',() => {
     render()
 })
 
+// 音乐盒 -> 暂停 / 开始 -> 渲染
+bgmButton.addEventListener('click',() => {
+    if(audio.paused) {
+        audio.play()
+    }else {
+        audio.pause()
+    }
+    render()
+})
 
+// 音乐盒 上下首播放
+function bgmChange(index) {
+    bgmCover.style.backgroundImage = `url(${bgmInfo[index].imgSrc})`
+    bgmCover.style.backgroundSize = 'cover'
+    bgmCover.style.backgroundPosition = 'center'
+    bgmCover.style.backgroundRepeat = 'no-repeat'
+    
+    bgmTitle.innerHTML = bgmInfo[index].name
+    bgmSinger.innerHTML = bgmInfo[index].author
+    audio.src = bgmInfo[index].src
+    audio.load()
+    audio.play()
+}
+
+lastSong.addEventListener('click',() => {
+    state.currentIndex = (state.currentIndex - 1 + bgmInfo.length) % bgmInfo.length
+    bgmChange(state.currentIndex)
+})
+
+nextSong.addEventListener('click',() => {
+    state.currentIndex = (state.currentIndex + 1 + bgmInfo.length) % bgmInfo.length
+    bgmChange(state.currentIndex)
+})
 // 页面首次渲染 可以删除html 预写好的类名
 render()

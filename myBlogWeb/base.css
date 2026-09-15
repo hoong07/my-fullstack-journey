@@ -54,7 +54,7 @@ img,video {
 }
 
 /* 活跃类 ，当前选中的页 */
-.active {
+.banner .navigator .iconfont.active {
     background: rgba(99, 102, 241, 0.15);  /* 主题色半透明 */
     border-color: rgba(99, 102, 241, 0.6);
     color: #818cf8;
@@ -94,6 +94,7 @@ img,video {
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    border: 2px solid var(--bg-deeper);
 }
 
 .banner .header {
@@ -130,47 +131,6 @@ img,video {
     text-align: center;
     cursor: pointer;
 }
-
-
-
-/* .banner .navigator .nav-button .home::before {
-    content: '';
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    background-image: url(./assets/windows_vista/vista_netcenter.ico);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    vertical-align: middle;
-}
-
-.banner .navigator .nav-button .archives::before {
-    content: '';
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    background-image: url(./assets/windows_vista/vista_book_2.ico);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    vertical-align: middle;
-}
-
-.banner .navigator .nav-button .about::before {
-    content: '';
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    background-image: url(./assets/windows_vista/vista_info.ico);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    vertical-align: middle;
-} */
-
-
-
 
 .banner .navigator .nav-button li:active {
     background: linear-gradient(
@@ -240,6 +200,7 @@ img,video {
     width: 100px;
     height: 100px;
     border-radius: 50%;
+    border: 3px solid var(--bg-deeper);
 }
 
 /* 超链接 */
@@ -282,12 +243,20 @@ img,video {
     justify-content: space-around;
 }
 
+/* 音乐盒cover 的 动画 */
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
 .musicPlayer .song-info .cover {
     margin-left: 0;
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: skyblue;
+    border: 2px solid var(--accent-light);
+    background: url(./bgMusic/kanong.jpg) center / cover no-repeat;
+    animation: rotate 5s linear infinite;
 }
 
 .musicPlayer .controls {
@@ -301,8 +270,12 @@ img,video {
 }
 
 .musicPlayer .controls .iconfont{
-    font-size: 16px;
+    font-size: 20px;
     text-align: center;
+}
+
+.musicPlayer .controls .stop .iconfont {
+    font-size: 30px;
 }
 
 .musicPlayer .controls .stop,

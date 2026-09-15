@@ -89,6 +89,13 @@
         #c5c9cf 100%
         );
     }
+
+    .musicPlayer .controls .stop:hover,
+    .musicPlayer .controls .last-song:hover,
+    .musicPlayer .controls .next-song:hover {
+        transform: scale(1.05) translateY(-4px);
+        transition: .3s;
+    }
 }
 
 /* 媒体查询 暗黑主题色 */
