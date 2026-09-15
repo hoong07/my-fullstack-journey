@@ -23,6 +23,8 @@ const headButton = document.querySelector('.banner .header img')
 // 文章列表
 const post = document.querySelectorAll('article')
 const post_list = document.querySelector('.content-area .article ul')
+// 文章返回按钮
+const postButton = document.querySelector('.post-back')
 
 const render = () => {
     // 渲染三个大tab 栏
@@ -45,8 +47,10 @@ const render = () => {
     // aside 的 打开栏 -> 看是否在窄屏
     aside.classList.toggle('open',state.asideOpen)
     console.log(111);
-    
     // state.asideOpen && aside.setAttribute('display','flex')
+
+    // 根据post 是否不为null 来判断是否显示postButton
+    postButton.classList.toggle('hidden',!state.post)
 }
 
 // 给state 写入状态
@@ -77,6 +81,12 @@ post_list.addEventListener('click',(e) => {
 headButton.addEventListener('click',() => {
     state.asideOpen = !state.asideOpen
     console.log(state.asideOpen);
+    render()
+})
+
+// 文章打开详细 -> 显示postback 的 button -> 点击 -> 写入 state.post = null -> 渲染
+postButton.addEventListener('click',() => {
+    state.post = null
     render()
 })
 

@@ -1,7 +1,16 @@
 @media (max-width: 962px) {
     .banner .navigator {
         margin-left: 50%;
-        transform: translate(-50%,70%);
+        transform: translate(-50%,60%);
+    }
+
+    .banner .navigator .nav-button {
+        height: 18px;
+    }
+
+    .banner .navigator .nav-button li {
+        line-height: 18px;
+        font-size: 12px;
     }
 }
 

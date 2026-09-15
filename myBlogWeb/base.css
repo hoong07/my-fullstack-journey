@@ -390,6 +390,16 @@ img,video {
 }
 
 /* 文章详细 */
+/* 返回按钮 */
+.content-area .post-back {
+    padding: 8px 20px;
+    border-radius: 20px; 
+    background: rgba(169,179,173,0.4);
+    color: #000000;
+    border: 2px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+}
+
 .content-area .post {
     background: linear-gradient(
     to bottom,
