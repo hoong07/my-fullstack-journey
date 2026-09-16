@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hoong's blog</title>
-    <!-- <link rel="icon" href="assets/Icon1.webp" type="image/x-icon"> -->
+    <link rel="shortcut icon" href="./assets/favicon-web.ico" type="image/x-icon">
     <link rel="stylesheet" href="./base.css">
     <link rel="stylesheet" href="./responsive.css">
     <link rel="stylesheet" href="./assets/ico-font/iconfont.css">
@@ -46,8 +46,8 @@
                         <div class="myName">Hoong Lee</div>
                         <!-- 链接 github 啥的 -->
                         <div class="hyperLink">
-                            <a href="https://github.com/hoong07"><img src="./assets/github.png" alt="github"></a>
-                            <a href="https://blog.csdn.net/2503_93342134?spm=1000.2115.3001.5343"><img src="./assets/csdn.png" alt="csdn"></a>
+                            <a href="https://github.com/hoong07" target="_blank"><img src="./assets/github.png" alt="github"></a>
+                            <a href="https://blog.csdn.net/2503_93342134?spm=1000.2115.3001.5343" target="_blank"><img src="./assets/csdn.png" alt="csdn"></a>
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
             <!-- 左边模块二 -->
             <!-- 音乐播放器 -->
             <div class="musicPlayer">
-                <audio id="bgMusic" src=""></audio>
+                <audio id="bgMusic" preload="none"></audio>
                 <!-- 歌曲信息： -->
                  <div class="song-info">
                     <!-- 封面 -->
@@ -254,7 +254,15 @@
                 </section>
 
                 <!-- 关于区域 -->
-                 <section class="about hidden" data-section="about"></section>
+                 <section class="about hidden" data-section="about">
+                    <h3>联系方式:</h3>
+                    <div class="contact">
+                        <div id="contact-bilibili">
+                            <a href="https://space.bilibili.com/1171285365?spm_id_from=333.1007.0.0" target="_blank"></a>
+                        </div>
+                    </div>
+                    <small>有什么开源项目的想法、缺人手，想一起做项目的，或者想一起学习，相互鼓励进步的搭子可以私信我哦qwq</small>
+                 </section>
             
         </div>
 

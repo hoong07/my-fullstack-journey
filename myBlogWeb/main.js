@@ -14,7 +14,6 @@ const state = {
 }
 
 const section = document.querySelectorAll('section')
-// console.log(section);
 
 // aside 侧边栏
 const aside = document.querySelector('.main .aside')
@@ -32,11 +31,10 @@ const bgmSinger = document.querySelector('.musicPlayer .song-info .song-detail .
 
 // 音乐库 对象
 const bgmInfo = [
-    {src: './bgMusic/kanong.mp3',name: '卡农',author: 'dylanf',imgSrc: './bgMusic/kanong.jpg'},
-    {src: './bgMusic/haiguixiansheng.mp3',name: '男孩别哭',author: '海龟先生',imgSrc: './bgMusic/haiguixiansheng.jpg'},
+    {src: './bgMusic/kanong.aac',name: '卡农',author: 'dylanf',imgSrc: './bgMusic/kanong.jpg'},
+    {src: './bgMusic/haiguixiansheng.aac',name: '男孩别哭',author: '海龟先生',imgSrc: './bgMusic/haiguixiansheng.jpg'},
     {src: './bgMusic/unhappy.mp3',name: 'unhappy',author: 's0rrow',imgSrc: './bgMusic/unhappy.jpg'},
-    {src: './bgMusic/zongyouyitian.mp3',name: '总有一天你会出现在我身边',author: '棱镜乐队',imgSrc: './bgMusic/zongyouyitian.jpg'},
-    {src: './bgMusic/wulai.mp3',name: '无赖',author: '郑中基',imgSrc :'./bgMusic/wulai.jpg'}
+    {src: './bgMusic/zongyouyitian.mp3',name: '总有一天你会出现在我身边',author: '棱镜乐队',imgSrc: './bgMusic/zongyouyitian.jpg'}
 ]
 
 
@@ -66,15 +64,27 @@ const render = () => {
 
     // aside 的 打开栏 -> 看是否在窄屏
     aside.classList.toggle('open',state.asideOpen)
-    // console.log(111);
-    // state.asideOpen && aside.setAttribute('display','flex')
 
     // 根据post 是否不为null 来判断是否显示postButton
     postButton.classList.toggle('hidden',!state.post)
 
-    // 根据index 来判断是哪一首歌
-    bgmChange(state.currentIndex)
+}
 
+// 音乐盒 上下首切换播放
+function bgmChange(index) {
+    bgmCover.style.backgroundImage = `url(${bgmInfo[index].imgSrc})`
+    
+    bgmTitle.innerHTML = bgmInfo[index].name
+    bgmSinger.innerHTML = bgmInfo[index].author
+    audio.src = bgmInfo[index].src
+    audio.load()
+}
+
+// 暂停键处理:
+function stopButtonChange() {
+    // 根据 audio 的 属性，判断中间是 暂停 还是 开始
+    const ico = audio.paused ? 'iconfont icon-bofangqi-bofang' : 'iconfont icon-bofangqi-zanting'
+    bgmButton.innerHTML = `<i class="iconfont ${ico}"></i>`
 }
 
 // 给state 写入状态
@@ -104,7 +114,6 @@ post_list.addEventListener('click',(e) => {
 // 移动端： 点击上面的小头像 -> 显示侧边栏
 headButton.addEventListener('click',() => {
     state.asideOpen = !state.asideOpen
-    console.log(state.asideOpen);
     render()
 })
 
@@ -114,15 +123,10 @@ postButton.addEventListener('click',() => {
     render()
 })
 
-// 暂停键处理:
-function stopButtonChange() {
-    // 根据 audio 的 属性，判断中间是 暂停 还是 开始
-    const ico = audio.paused ? 'iconfont icon-bofangqi-bofang' : 'iconfont icon-bofangqi-zanting'
-    bgmButton.innerHTML = `<i class="iconfont ${ico}"></i>`
-}
 
 // 音乐盒 -> 暂停 / 开始 -> 渲染
-bgmButton.addEventListener('click',() => {
+bgmButton.addEventListener('click',(e) => {
+    e.stopPropagation()
     if(audio.paused) {
         audio.play()
     }else {
@@ -131,27 +135,43 @@ bgmButton.addEventListener('click',() => {
     stopButtonChange()
 })
 
-// 音乐盒 上下首播放
-function bgmChange(index) {
-    bgmCover.style.backgroundImage = `url(${bgmInfo[index].imgSrc})`
-    
-    bgmTitle.innerHTML = bgmInfo[index].name
-    bgmSinger.innerHTML = bgmInfo[index].author
-    audio.src = bgmInfo[index].src
-    // audio.load()
+document.querySelector('.musicPlayer').addEventListener('click',(e) => {
+    if(audio.paused) {
+        audio.play()
+    }else {
+        audio.pause()
+    }
+    stopButtonChange()
+})
+
+lastSong.addEventListener('click',(e) => {
+    e.stopPropagation()
+    const i = (state.currentIndex - 1 + bgmInfo.length) % bgmInfo.length
+    go({currentIndex: i})
+    bgmChange(state.currentIndex)
     audio.play()
-}
-
-lastSong.addEventListener('click',() => {
-    state.currentIndex = (state.currentIndex - 1 + bgmInfo.length) % bgmInfo.length
-    bgmChange(state.currentIndex)
     stopButtonChange()
 })
 
-nextSong.addEventListener('click',() => {
-    state.currentIndex = (state.currentIndex + 1 + bgmInfo.length) % bgmInfo.length
+nextSong.addEventListener('click',(e) => {
+    e.stopPropagation()
+    const i = (state.currentIndex + 1 + bgmInfo.length) % bgmInfo.length
+    go({currentIndex: i})
     bgmChange(state.currentIndex)
+    audio.play()
     stopButtonChange()
 })
+
+// 播放完自动进入下一首
+audio.addEventListener('ended',() => {
+    const i = (state.currentIndex + 1 + bgmInfo.length) % bgmInfo.length
+    go({currentIndex: i})
+    bgmChange(state.currentIndex)
+    audio.play()
+    stopButtonChange()
+})
+
 // 页面首次渲染 可以删除html 预写好的类名
 render()
+// 同时根据index 来判断是哪一首歌
+bgmChange(state.currentIndex)
