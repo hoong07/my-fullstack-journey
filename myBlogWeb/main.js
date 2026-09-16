@@ -72,11 +72,8 @@ const render = () => {
     // 根据post 是否不为null 来判断是否显示postButton
     postButton.classList.toggle('hidden',!state.post)
 
-    // 根据 audio 的 属性，判断中间是 暂停 还是 开始
-    const ico = audio.paused ? 'iconfont icon-bofangqi-bofang' : 'iconfont icon-bofangqi-zanting'
-    bgmButton.innerHTML = `<i class="iconfont ${ico}"></i>`
-
     // 根据index 来判断是哪一首歌
+    bgmChange(state.currentIndex)
 
 }
 
@@ -117,6 +114,13 @@ postButton.addEventListener('click',() => {
     render()
 })
 
+// 暂停键处理:
+function stopButtonChange() {
+    // 根据 audio 的 属性，判断中间是 暂停 还是 开始
+    const ico = audio.paused ? 'iconfont icon-bofangqi-bofang' : 'iconfont icon-bofangqi-zanting'
+    bgmButton.innerHTML = `<i class="iconfont ${ico}"></i>`
+}
+
 // 音乐盒 -> 暂停 / 开始 -> 渲染
 bgmButton.addEventListener('click',() => {
     if(audio.paused) {
@@ -124,31 +128,30 @@ bgmButton.addEventListener('click',() => {
     }else {
         audio.pause()
     }
-    render()
+    stopButtonChange()
 })
 
 // 音乐盒 上下首播放
 function bgmChange(index) {
     bgmCover.style.backgroundImage = `url(${bgmInfo[index].imgSrc})`
-    bgmCover.style.backgroundSize = 'cover'
-    bgmCover.style.backgroundPosition = 'center'
-    bgmCover.style.backgroundRepeat = 'no-repeat'
     
     bgmTitle.innerHTML = bgmInfo[index].name
     bgmSinger.innerHTML = bgmInfo[index].author
     audio.src = bgmInfo[index].src
-    audio.load()
+    // audio.load()
     audio.play()
 }
 
 lastSong.addEventListener('click',() => {
     state.currentIndex = (state.currentIndex - 1 + bgmInfo.length) % bgmInfo.length
     bgmChange(state.currentIndex)
+    stopButtonChange()
 })
 
 nextSong.addEventListener('click',() => {
     state.currentIndex = (state.currentIndex + 1 + bgmInfo.length) % bgmInfo.length
     bgmChange(state.currentIndex)
+    stopButtonChange()
 })
 // 页面首次渲染 可以删除html 预写好的类名
 render()

@@ -241,6 +241,15 @@ img,video {
 .musicPlayer .song-info {
     display: flex;
     justify-content: space-around;
+    font-size: 12px;
+    color: var(--accent);
+    text-align: center;
+}
+
+.musicPlayer .song-info .song-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* 音乐盒cover 的 动画 */
@@ -264,6 +273,7 @@ img,video {
     justify-content: space-evenly;
     width: 100%;
     min-height: 30px;
+    line-height: 30px;
     background-color: var(--bg-deeper);
     border-radius: 5px;
     border: 1px solid var(--text-secondary);
@@ -284,7 +294,6 @@ img,video {
     border-radius: 50%;
     width: 30px;
     height: 30px;
-    line-height: 30px;
     background: var(--bg) linear-gradient(
         to bottom,
         #d0d4da 0%,
