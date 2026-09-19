@@ -1,0 +1,1 @@
+(()=>{"use strict";document.querySelector(".btn").addEventListener("click",()=>{const e=document.querySelector(".xtx-form [name=phone]").value,o=document.querySelector(".xtx-form-code [name=code]").value;(e=>11===e.length)(e)?(e=>6===e.length)(o)?(console.log(e,o),console.log("注册成功")):console.log("验证码长度不对"):console.log("手机号长度不对")})})();
