@@ -2,14 +2,18 @@ import { NameList } from './NameList'
 import { Alert } from './Alert'
 import { NewButton } from './NewButton'
 import { CustomButton } from './CustomButton'
+import { PropsTest } from './PropsTest'
+import { HandleOrder } from './HandleOrder'
 import './App.css'
 function App() {
   return (
   <div>
+    <HandleOrder />
     <CustomButton text="Like"/>
     <CustomButton text="Buttom"/>
     <Alert>your changes have been saved!</Alert>
     <Alert type='error'>your changes have been saved!</Alert>
+    <PropsTest>test</PropsTest>
     <NewButton />
     <NameList />
     </div>

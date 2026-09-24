@@ -10,7 +10,7 @@ export const Alert = ({children , type = "success"}) => {
     //     borderRadius : "8px" ,
     //     marginBottom: "16px" ,
     // }}>{children}</div>
-    // console.log(children);
+    console.log(children,type);
     
     return (
         <div className={`${style.alert} ${style[type]}`}>

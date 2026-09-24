@@ -54,9 +54,10 @@ graph TD
 - [x] 前端基础(HTML,CSS,JavaScript基础语法)
 - [x] 深入js，js进阶语法，ajax交互
 - [x] 完成第一个tip：做出自己的响应式个人博客,上传githubpage
-- [ ] 前端工程化,react框架,浏览器渲染引擎
+- [x] 前端工程化
+- [ ] react框架,浏览器渲染引擎
 - [ ] typeScript
-- [ ] 后端：node,ts + 框架
+- [ ] 后端：node,框架
 - [ ] ai 基础学习：prompt，rag，从零写GPT
 - [ ] 数据库+工程化
 - [ ] 项目+1 传统全栈 or 完全前端
