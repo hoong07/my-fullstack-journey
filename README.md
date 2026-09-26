@@ -55,12 +55,16 @@ graph TD
 - [x] 深入js，js进阶语法，ajax交互
 - [x] 完成第一个tip：做出自己的响应式个人博客,上传githubpage
 - [x] 前端工程化
-- [ ] react框架,浏览器渲染引擎
+- [ ] react框架
+- [ ] 补v8引擎，浏览器渲染机制
 - [ ] typeScript
-- [ ] 后端：node,框架
+- [ ] 写第一版前端简历
+- [ ] 后端：node,express
 - [ ] ai 基础学习：prompt，rag，从零写GPT
-- [ ] 数据库+工程化
-- [ ] 项目+1 传统全栈 or 完全前端
-- [ ] 学习agent:LangGraph,MCP,mini-sdk手搓agtnt
-- [ ] 项目+1 agent相关全栈
+- [ ] 数据库+nest.js+工程化
+- [ ] 项目+1 传统全栈
+- [ ] 写第二版全栈简历
+- [ ] 学习agent:harness,LangGraph,MCP,mini-sdk,多agent
+- [ ] 项目+1 agent全栈,目前计划是浏览器插件
+- [ ] 最终版简历
 - [ ] 实习
